@@ -13,7 +13,7 @@ b). Locking Files
 
 <?php
 $file = fopen("test.txt","w");
-echo fwrite($file,"Welcome to PHP");
+echo fwrite($file,"Welcome");
 fclose($file);
 ?>
 
@@ -23,7 +23,7 @@ fclose($file);
 $file = fopen("test.txt","w+");
 // exclusive lock
 if (flock($file,LOCK_EX)) {
-  fwrite($file,"Welcome to PHP");
+  fwrite($file,"Welcome");
   // release lock
   flock($file,LOCK_UN);
 } else {
